@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070403"/><stop offset=".5" stop-color="#2a0b0b"/><stop offset="1" stop-color="#6a1812"/></linearGradient>
+<linearGradient id="skyb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050505"/><stop offset=".6" stop-color="#1c1210"/><stop offset="1" stop-color="#3b1a12"/></linearGradient>
+<radialGradient id="moonglow"><stop offset="0" stop-color="#ff3b2a" stop-opacity=".75"/><stop offset=".45" stop-color="#8b0000" stop-opacity=".35"/><stop offset="1" stop-color="#8b0000" stop-opacity="0"/></radialGradient>
+<radialGradient id="moon" cx=".4" cy=".35"><stop offset="0" stop-color="#ff8a70"/><stop offset=".6" stop-color="#c0261c"/><stop offset="1" stop-color="#6a0d0d"/></radialGradient>
+<radialGradient id="fire"><stop offset="0" stop-color="#fff0a0"/><stop offset=".35" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ff4500" stop-opacity="0"/></radialGradient>
+<linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#140c0a"/><stop offset="1" stop-color="#030202"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="22"/></filter>
+<filter id="blur2"><feGaussianBlur stdDeviation="6"/></filter>
+</defs><circle cx="450" cy="450" r="480.0" fill="url(#moonglow)"/><circle cx="450" cy="450" r="150" fill="url(#moon)"/><circle cx="405.0" cy="420.0" r="27.0" fill="#7a1010" opacity=".5"/><circle cx="502.5" cy="495.0" r="39.0" fill="#7a1010" opacity=".4"/></svg>

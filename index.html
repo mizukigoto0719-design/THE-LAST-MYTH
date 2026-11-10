@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最後の神話 - THE LAST MYTH - 公式サイト</title>
+  <meta name="description" content="絶望の淵で、砕けた神話に触れる。ダークファンタジーRPG『最後の神話 - THE LAST MYTH -』公式プロモーションサイト。">
+  <meta name="theme-color" content="#0A0908">
+  <meta property="og:title" content="最後の神話 - THE LAST MYTH -">
+  <meta property="og:description" content="その世界に足を踏み入れた時、あなたは、もう戻れない。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/emblem.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#story">本文へスキップ</a>
+
+  <!-- atmosphere -->
+  <div class="fog-layer" aria-hidden="true"></div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div id="blackout" aria-hidden="true"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <a class="logo" href="#top" data-scroll aria-label="最後の神話 TOPへ">
+      <img src="images/emblem.svg" alt="" width="54" height="54">
+      <span class="logo-text"><span class="logo-ja">最後の神話</span><span class="logo-en">THE LAST MYTH</span></span>
+    </a>
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="#top" data-scroll data-spy="top">TOP</a></li>
+        <li><a href="#story" data-scroll data-spy="story">STORY</a></li>
+        <li><a href="#world" data-scroll data-spy="world">WORLD</a></li>
+        <li><a href="#boss" data-scroll data-spy="boss">BOSS</a></li>
+        <li><a href="#gallery" data-scroll data-spy="gallery">GALLERY</a></li>
+        <li><a href="#special" data-scroll data-spy="special">SPECIAL</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <button class="btn-menu" id="menuOpen" type="button" aria-label="メニューを開く" aria-expanded="false"
+        aria-controls="menu">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= FULLSCREEN MENU ================= -->
+  <div class="menu-overlay" id="menu" role="dialog" aria-modal="true" aria-label="サイトメニュー" aria-hidden="true">
+    <div class="menu-bg"></div>
+    <div class="menu-glow"></div>
+    <button class="menu-close" id="menuClose" type="button" aria-label="メニューを閉じる">×</button>
+    <nav aria-label="メインメニュー">
+      <ul class="menu-list">
+        <li><a href="#top" data-scroll><span class="en">TOP</span><span class="ja">序章</span></a></li>
+        <li><a href="#story" data-scroll><span class="en">STORY</span><span class="ja">物語</span></a></li>
+        <li><a href="#world" data-scroll><span class="en">WORLD</span><span class="ja">世界観</span></a></li>
+        <li><a href="#boss" data-scroll><span class="en">BOSS</span><span class="ja">ボス図鑑</span></a></li>
+        <li><a href="#gallery" data-scroll><span class="en">GALLERY</span><span class="ja">ギャラリー</span></a></li>
+        <li><a href="#special" data-scroll><span class="en">SPECIAL</span><span class="ja">特別コンテンツ</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ================= 01 HERO ================= -->
+    <section class="hero" id="top" aria-label="メインビジュアル">
+      <div class="hero-slides" id="slides" aria-roledescription="スライドショー">
+        <div class="slide is-active" data-title="赤い月と崩壊した巨大城塞" data-copy="月は血に染まり、聖都は墓標となった。" data-pos="center">
+          <img src="images/hero.png" alt="赤い月の下にそびえる崩壊した巨大城塞" width="1920" height="1080">
+        </div>
+        <div class="slide" data-title="血に染まった堕天使の石像" data-copy="天使は泣いた。神々の死を、ただ一人見届けて。" data-pos="left">
+          <img src="images/hero-2.jpg" alt="血の涙を流す堕天使の石像" width="1920" height="1080" loading="lazy">
+        </div>
+        <div class="slide" data-title="炎に包まれた古代神殿" data-copy="祈りの炎は、いまや世界を焼く業火となる。" data-pos="center">
+          <img src="images/hero-3.jpg" alt="炎に包まれた古代神殿" width="1920" height="1080" loading="lazy">
+        </div>
+        <div class="slide" data-title="暗黒の騎士と荒廃した大地" data-copy="最後の騎士は、剣を杖に灰の大地を往く。" data-pos="center">
+          <img src="images/hero-4.jpg" alt="荒廃した大地に立つ暗黒の騎士" width="1920" height="1080" loading="lazy">
+        </div>
+      </div>
+
+      <!-- parallax layers -->
+      <img class="plx plx-moon" data-plx="0.10" src="images/layer-moon.svg" alt="" aria-hidden="true">
+      <img class="plx plx-castle" data-plx="0.18" src="images/layer-castle.svg" alt="" aria-hidden="true">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <img class="plx plx-ruins" data-plx="0.42" src="images/layer-ruins.svg" alt="" aria-hidden="true">
+      <div class="hero-fog" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-title" data-plx="0.12">
+          <h1>
+            <span class="title-ja">最後の神話</span>
+            <span class="title-en">THE LAST MYTH</span>
+          </h1>
+          <span class="orn title-orn" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="hero-copy" data-plx="0.16">
+        <p class="copy-main" id="typeTarget" data-text="絶望の淵で、&#10;砕けた神話に触れる——" aria-label="絶望の淵で、砕けた神話に触れる"></p>
+        <span class="copy-sep" aria-hidden="true"></span>
+        <p class="copy-sub" id="copySub">その世界に足を踏み入れた時、<br>あなたは、もう戻れない。</p>
+        <div class="hero-cta" id="heroCta">
+          <span class="btn-wrap"><a class="btn" href="#story" data-scroll>深層へ進む <span class="arr"
+                aria-hidden="true">›</span></a></span>
+        </div>
+      </div>
+
+      <div class="slide-caption" id="slideCaption" aria-live="polite">
+        <p class="no" id="capNo">01 / 04</p>
+        <p class="ttl" id="capTtl">赤い月と崩壊した巨大城塞</p>
+      </div>
+
+      <button class="slide-nav slide-prev" id="slidePrev" type="button" aria-label="前のスライド"><span>‹</span></button>
+      <button class="slide-nav slide-next" id="slideNext" type="button" aria-label="次のスライド"><span>›</span></button>
+      <div class="slide-dots" id="slideDots" role="tablist" aria-label="スライド選択"></div>
+
+      <a class="scroll-ind" href="#story" data-scroll aria-label="下へスクロール">SCROLL</a>
+
+      <div class="hero-dock">
+        <a class="dock-card dock-death" href="#death" data-scroll aria-label="DEATH TRAPへ">
+          <img class="bg" src="images/deathtrap.png" alt="" loading="lazy">
+          <span class="dock-tag">☠ DEATH TRAP</span>
+          <span class="dock-txt"><span class="dd">YOU DIED</span><span class="sub">深層へ堕ちる…</span></span>
+        </a>
+        <a class="dock-card dock-boss" href="#boss" data-scroll aria-label="BOSS図鑑へ">
+          <img class="bg" src="images/boss-1.png" alt="" loading="lazy">
+          <span class="dock-tag">✠ BOSS図鑑</span>
+          <span class="dock-txt">
+            <span class="paper"><b>弱点</b>聖なる炎、または古の呪文</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="news-bar">
+        <span class="lbl">NEWS</span>
+        <time datetime="2026-10-26">2026.10.26</time>
+        <span>公式サイトを開設しました。</span>
+        <div class="sns">
+          <a href="#" aria-label="X (旧Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z" />
+            </svg></a>
+          <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 0-6.4 0L8.6 3A19.800 19.800 0 0 0 3.7 4.4C.6 9-.2 13.5.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100c-.7-.3-1.400-.6-2-1l.5-.4a14.200 14.200 0 0 0 12 0l.5.4c-.6.4-1.300.7-2 1L18 21a19.900 19.900 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8 15.300c-1.200 0-2.100-1.100-2.100-2.400S6.800 10.500 8 10.500s2.200 1.100 2.100 2.400c0 1.300-.9 2.400-2.100 2.400zm8 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.200 1.100 2.100 2.400c0 1.300-.9 2.400-2.100 2.400z" />
+            </svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 02 STORY ================= -->
+    <section class="section story" id="story" aria-labelledby="storyTitle">
+      <img class="bg-deco" data-plx="-0.08" src="images/layer-moon.svg" alt="" aria-hidden="true">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-label reveal">STORY</p>
+          <h2 class="sec-title reveal" id="storyTitle" style="--d:.1s">世界は、<span class="red">神々</span>に見捨てられた。</h2>
+          <span class="orn reveal" style="--d:.2s" aria-hidden="true"></span>
+          <p class="sec-lead reveal" style="--d:.3s">
+            ある夜、神々は音もなく姿を消した。祈りは虚空に消え、空には血の月が昇り、大地は静かに崩れはじめる。<br>残された者たちが手にしたのは、砕け散った「神話」の欠片だけ。——その欠片を拾い集める者は、やがて世界の真実に辿り着く。
+          </p>
+        </header>
+
+        <div class="accordion" data-accordion>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="st1" id="st1-b">
+                <span class="acc-no">I</span>
+                <span class="acc-title">世界の始まり<small>THE GENESIS</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="st1" role="region" aria-labelledby="st1-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">
+                    はじめに在ったのは、名もなき闇と、ひとつの祈りだけだった。祈りは七柱の神を生み、神々は闇を裂いて大地と海と空を創った。人々は神々を讃え、石の聖堂を築き、その名を歌い継いだ。</p>
+                  <p>だが神々は知っていた。創られたものはいつか創造主を越え、あるいは創造主を喰らうことを。ゆえに彼らは世界の底に、ひとつの「楔」を打ち込んだ。それが後に「最後の神話」と呼ばれるものである。</p>
+                  <span class="seal">— 第一の書 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="st2" id="st2-b">
+                <span class="acc-no">II</span>
+                <span class="acc-title">神々の黄昏<small>TWILIGHT OF THE GODS</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="st2" role="region" aria-labelledby="st2-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">黄昏は、一夜にして訪れた。天の玉座は空となり、神殿の灯火は同時に消えた。七柱のうち四柱は消息を絶ち、残る三柱は狂い、地上に災厄を撒き散らした。</p>
+                  <p>王都は灰となり、聖職者たちは祈る言葉を失った。人々はそれでも空を見上げ続けたが、答える声は二度と降りなかった。</p>
+                  <span class="seal">— 第二の書 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="st3" id="st3-b">
+                <span class="acc-no">III</span>
+                <span class="acc-title">失われた聖堂<small>THE LOST CATHEDRAL</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="st3" role="region" aria-labelledby="st3-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">地図から消えた聖堂が、深層のさらに奥に眠るという。そこには神々が最後に遺した祭壇があり、砕けた神話の欠片が、血の色の光を放ちながら眠っている。</p>
+                  <p>聖堂へ至る道は、死者のみが歩むことを許される。ゆえに旅人は幾度も死に、幾度も立ち上がらねばならない。</p>
+                  <span class="seal">— 第三の書 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="st4" id="st4-b">
+                <span class="acc-no">IV</span>
+                <span class="acc-title">七つの呪印<small>THE SEVEN SEALS</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="st4" role="region" aria-labelledby="st4-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">神々が去る間際、世界の七ヶ所に刻んだ呪印。それは扉を閉ざす鍵であり、同時に、何かを封じる檻でもある。ひとつ解かれるたびに、空の月は赤みを増していく。</p>
+                  <ul class="curses">
+                    <li>第一印 ─ 沈黙</li>
+                    <li>第二印 ─ 灰燼</li>
+                    <li>第三印 ─ 嘆き</li>
+                    <li>第四印 ─ 飢え</li>
+                    <li>第五印 ─ 忘却</li>
+                    <li>第六印 ─ 裏切り</li>
+                    <li>第七印 ─ ???</li>
+                  </ul>
+                  <span class="seal">— 第四の書 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="st5" id="st5-b">
+                <span class="acc-no">V</span>
+                <span class="acc-title">最後の神話の真実<small>THE TRUTH OF THE LAST MYTH</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="st5" role="region" aria-labelledby="st5-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">神々は、消えたのではない。——封じられたのだ。創造主の残骸が目覚めたとき、神々は自らを犠牲に世界を閉じた。残された「神話」は祈りではなく、終焉を告げる警鐘であった。
+                  </p>
+                  <p>すべての呪印を解いた先で、あなたは選ぶことになる。神話を繋ぐか、あるいは、完全に砕くか。</p>
+                  <span class="seal">— 終の書 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 03 WORLD ================= -->
+    <section class="section world" id="world" aria-labelledby="worldTitle">
+      <header class="sec-head world-head">
+        <p class="sec-label reveal">WORLD</p>
+        <h2 class="sec-title reveal" id="worldTitle" style="--d:.1s">滅びゆく、四つの地</h2>
+        <span class="orn reveal" style="--d:.2s" aria-hidden="true"></span>
+      </header>
+
+      <article class="world-panel">
+        <div class="wbg" data-wplx="0.22"><img src="images/world-1.jpg" alt="" loading="lazy"></div>
+        <div class="wtext reveal" data-wtxt>
+          <p class="wno">01</p>
+          <p class="wen">THE FALLEN CAPITAL</p>
+          <h3>滅びた王都</h3>
+          <p>かつて千の尖塔が天を衝いた王都は、いまや月明かりに照らされる巨大な墓標。崩れた城壁の隙間には、玉座を守り続ける亡者の騎士団が今も彷徨っている。</p>
+        </div>
+      </article>
+      <article class="world-panel">
+        <div class="wbg" data-wplx="0.22"><img src="images/world-2.png" alt="" loading="lazy"></div>
+        <div class="wtext reveal" data-wtxt>
+          <p class="wno">02</p>
+          <p class="wen">THE FORGOTTEN SANCTUARY</p>
+          <h3>忘れられた聖堂</h3>
+          <p>炎に包まれた石柱の回廊。燃え尽きぬ聖火は神々の最後の祈りとされ、その奥には「最後の神話」に至る隠された扉が封じられている。</p>
+        </div>
+      </article>
+      <article class="world-panel">
+        <div class="wbg" data-wplx="0.22"><img src="images/world-3.jpg" alt="" loading="lazy"></div>
+        <div class="wtext reveal" data-wtxt>
+          <p class="wno">03</p>
+          <p class="wen">THE ABYSSAL FOREST</p>
+          <h3>深淵の森</h3>
+          <p>光の届かぬ黒い樹海。枝は人の骨のように絡み合い、霧の奥からは、祈りを忘れた魔女のすすり泣きが聞こえてくる。足を踏み入れた者は、二度と同じ道を戻れない。</p>
+        </div>
+      </article>
+      <article class="world-panel">
+        <div class="wbg" data-wplx="0.22"><img src="images/world-4.jpg" alt="" loading="lazy"></div>
+        <div class="wtext reveal" data-wtxt>
+          <p class="wno">04</p>
+          <p class="wen">THE ASHEN WASTELAND</p>
+          <h3>灰の荒野</h3>
+          <p>神々の亡骸が燃え尽きた果ての地。風は灰を運び、大地には倒れた天使の石像だけが静かに佇む。ここが世界の終わり、そして最後の神話のはじまりの場所。</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= 04 BOSS ================= -->
+    <section class="section boss" id="boss" aria-labelledby="bossTitle">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-label reveal">BOSS</p>
+          <h2 class="sec-title reveal" id="bossTitle" style="--d:.1s">ボス図鑑</h2>
+          <span class="orn reveal" style="--d:.2s" aria-hidden="true"></span>
+          <p class="sec-lead reveal" style="--d:.3s">神話の欠片を守る四つの強大な存在。その弱点、伝承、能力を知ることが、生き延びる唯一の術となる。</p>
+        </header>
+        <div class="boss-grid" id="bossGrid">
+          <button class="boss-card reveal" type="button" data-boss="0" aria-haspopup="dialog" style="--d:0s">
+            <img src="images/boss-0.png" alt="堕天の守護者 ミカエラ・ノクスの姿" loading="lazy">
+            <span class="boss-info"><span class="no">No.01</span>
+              <h3>堕天の守護者<br>ノクス</h3><span class="ttl">血涙の石像</span><span class="more">DETAIL ›</span>
+            </span>
+          </button>
+          <button class="boss-card reveal" type="button" data-boss="1" aria-haspopup="dialog" style="--d:.12s">
+            <img src="images/boss-2.jpg" alt="灰燼の王 ヴァルグレイヴの姿" loading="lazy">
+            <span class="boss-info"><span class="no">No.02</span>
+              <h3>灰燼の王<br>ヴァルグレイヴ</h3><span class="ttl">滅びの王都を統べし者</span><span class="more">DETAIL ›</span>
+            </span>
+          </button>
+          <button class="boss-card reveal" type="button" data-boss="2" aria-haspopup="dialog" style="--d:.24s">
+            <img src="images/boss-3.jpg" alt="深淵の魔女 エリュシアの姿" loading="lazy">
+            <span class="boss-info"><span class="no">No.03</span>
+              <h3>深淵の魔女<br>エリュシア</h3><span class="ttl">森に沈みし祈り</span><span class="more">DETAIL ›</span>
+            </span>
+          </button>
+          <button class="boss-card reveal" type="button" data-boss="3" aria-haspopup="dialog" style="--d:.36s">
+            <img src="images/boss-4.jpg" alt="終焉の創造主 ヴォイド・ゼロの姿" loading="lazy">
+            <span class="boss-info"><span class="no">No.04</span>
+              <h3>終焉の創造主<br>ヴォイド・ゼロ</h3><span class="ttl">世界を統べた者の残骸</span><span class="more">DETAIL ›</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 05 DEATH TRAP ================= -->
+    <section class="death" id="death" aria-labelledby="deathTitle">
+      <div class="dbg" data-wplx="0.2"><img src="images/deathtrap.png" alt="" loading="lazy"></div>
+      <svg class="cracks" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M800 0 L770 120 L830 220 L760 330 L840 450 L770 560 L820 690 L790 900" />
+        <path d="M770 120 L620 170 L540 260 L420 300 L300 410" />
+        <path d="M840 450 L980 500 L1100 590 L1230 620 L1380 720" />
+        <path d="M830 220 L960 190 L1080 120 L1200 90 L1360 20" />
+        <path d="M760 330 L640 400 L560 520 L430 560 L330 700 L200 760" />
+      </svg>
+      <div class="death-inner">
+        <p class="death-label reveal">SECTION 05 — DEATH TRAP</p>
+        <h2 class="sr-only" id="deathTitle">死の罠 YOU DIED</h2>
+        <p class="you-died reveal" id="youDied" data-text="YOU DIED" aria-hidden="true" style="--d:.15s">YOU DIED</p>
+        <p class="death-sub reveal" style="--d:.3s">深層へ堕ちる…</p>
+        <p class="death-note reveal" style="--d:.4s">死は終わりではない。<br>倒れた者だけが、隠された聖堂への扉を見つける。</p>
+        <div class="reveal" style="--d:.5s">
+          <span class="btn-wrap"><a class="btn" href="#special" id="hiddenLink">隠された聖堂へ <span class="arr"
+                aria-hidden="true">›</span></a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 06 GALLERY ================= -->
+    <section class="section gallery" id="gallery" aria-labelledby="galleryTitle">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-label reveal">GALLERY</p>
+          <h2 class="sec-title reveal" id="galleryTitle" style="--d:.1s">砕けた神話の断片</h2>
+          <span class="orn reveal" style="--d:.2s" aria-hidden="true"></span>
+        </header>
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="g-item reveal" type="button" data-g="0" aria-haspopup="dialog"
+            aria-label="アートワーク1を拡大: 血月の聖都"><img src="images/gallery-1.jpg" alt="血月の聖都" loading="lazy"></button>
+          <button class="g-item reveal" type="button" data-g="1" aria-haspopup="dialog" aria-label="アートワーク2を拡大: 涙する堕天使"
+            style="--d:.08s"><img src="images/gallery-2.jpg" alt="涙する堕天使" loading="lazy"></button>
+          <button class="g-item reveal" type="button" data-g="2" aria-haspopup="dialog" aria-label="アートワーク3を拡大: 燃ゆる神殿"
+            style="--d:.16s"><img src="images/gallery-3.jpg" alt="燃ゆる神殿" loading="lazy"></button>
+          <button class="g-item reveal" type="button" data-g="3" aria-haspopup="dialog" aria-label="アートワーク4を拡大: 最後の騎士"
+            style="--d:.24s"><img src="images/gallery-4.jpg" alt="最後の騎士" loading="lazy"></button>
+          <button class="g-item reveal" type="button" data-g="4" aria-haspopup="dialog" aria-label="アートワーク5を拡大: 深淵の森"
+            style="--d:.32s"><img src="images/gallery-5.jpg" alt="深淵の森" loading="lazy"></button>
+          <button class="g-item reveal" type="button" data-g="5" aria-haspopup="dialog" aria-label="アートワーク6を拡大: 灰の荒野"
+            style="--d:.4s"><img src="images/gallery-6.jpg" alt="灰の荒野" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 07 SPECIAL ================= -->
+    <section class="section special" id="special" aria-labelledby="specialTitle">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-label reveal">SPECIAL</p>
+          <h2 class="sec-title reveal" id="specialTitle" style="--d:.1s">隠された聖堂</h2>
+          <span class="orn reveal" style="--d:.2s" aria-hidden="true"></span>
+          <p class="sec-lead reveal" style="--d:.3s">死者だけが辿り着ける、特別な頁。</p>
+        </header>
+        <div class="special-art reveal"><img src="images/special.jpg" alt="隠された聖堂の上に浮かぶ赤い月と呪印" loading="lazy"></div>
+        <div class="accordion" data-accordion id="specialAcc">
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="sp1" id="sp1-b">
+                <span class="acc-no">α</span>
+                <span class="acc-title">隠された神話<small>THE HIDDEN MYTH</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="sp1" role="region" aria-labelledby="sp1-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">語られなかった第八の神がいた。名を持たず、顔を持たず、ただ「終わり」だけを司る神。七柱が封じたのは、創造主の残骸ではなく、この神だったのかもしれない。</p>
+                  <p>あなたがここに辿り着いたということは、すでに一度、死を迎えたということ。ならば、もう一度だけ問おう——あなたは神話を、信じるか。</p>
+                  <span class="seal">— 隠された頁 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="sp2" id="sp2-b">
+                <span class="acc-no">β</span>
+                <span class="acc-title">未公開アートワーク<small>UNRELEASED ARTWORK</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="sp2" role="region" aria-labelledby="sp2-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">開発の初期に描かれた、没になったコンセプトアートの数々。いまだ公開されていない堕天使の素描や、崩壊前の王都の設計図などを、今後このページで順次公開していく予定です。
+                  </p>
+                  <p>更新情報は、公式SNSおよびNEWSでお知らせします。</p>
+                  <span class="seal">— 近日公開 —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item reveal">
+            <h3><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="sp3" id="sp3-b">
+                <span class="acc-no">γ</span>
+                <span class="acc-title">開発者からのメッセージ<small>MESSAGE FROM THE DEVELOPERS</small></span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button></h3>
+            <div class="acc-panel" id="sp3" role="region" aria-labelledby="sp3-b">
+              <div class="acc-inner">
+                <div class="parchment">
+                  <p class="first">『最後の神話』のサイトへお越しいただき、ありがとうございます。私たちは「絶望の中にこそ、美しさが宿る」という信念のもと、この世界を作り上げてきました。</p>
+                  <p>何度倒れても、立ち上がるたびに少しだけ世界が見えてくる。そんな体験をお届けできるよう、チーム一同、最後の一滴まで魂を込めて開発を続けています。どうか、あなたの手で神話の結末を見届けてください。
+                  </p>
+                  <span class="seal">— THE LAST MYTH 開発チーム —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= 08 FOOTER ================= -->
+  <footer class="site-footer">
+    <a class="footer-logo" href="#top" data-scroll aria-label="TOPへ戻る">
+      <img src="images/emblem.svg" alt="">
+      <span class="ja">最後の神話</span>
+      <span class="en">THE LAST MYTH</span>
+    </a>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="#top" data-scroll>TOP</a></li>
+        <li><a href="#story" data-scroll>STORY</a></li>
+        <li><a href="#world" data-scroll>WORLD</a></li>
+        <li><a href="#boss" data-scroll>BOSS</a></li>
+        <li><a href="#gallery" data-scroll>GALLERY</a></li>
+        <li><a href="#special" data-scroll>SPECIAL</a></li>
+      </ul>
+    </nav>
+    <div class="sns">
+      <a href="#" aria-label="X (旧Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z" />
+        </svg></a>
+      <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 0-6.4 0L8.6 3A19.800 19.800 0 0 0 3.7 4.400C.6 9-.2 13.5.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100c-.7-.3-1.400-.6-2-1l.5-.4a14.200 14.200 0 0 0 12 0l.5.4c-.6.4-1.300.7-2 1L18 21a19.900 19.900 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8 15.300c-1.200 0-2.100-1.100-2.100-2.400S6.800 10.500 8 10.500s2.200 1.100 2.100 2.400c0 1.300-.9 2.400-2.100 2.400zm8 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.200 1.100 2.100 2.400c0 1.300-.9 2.400-2.100 2.400z" />
+        </svg></a>
+    </div>
+    <p class="copyright">© 2026 THE LAST MYTH. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+  <a class="to-top" id="toTop" href="#top" data-scroll aria-label="ページトップへ">↑</a>
+
+  <!-- ================= MODALS ================= -->
+  <div class="modal" id="bossModal" role="dialog" aria-modal="true" aria-labelledby="bmName" aria-hidden="true">
+    <div class="modal-box boss-modal">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
+      <div class="bm-visual"><img id="bmImg" src="" alt=""></div>
+      <div class="bm-body">
+        <p class="bm-no" id="bmNo"></p>
+        <h3 class="bm-name" id="bmName"></h3>
+        <p class="bm-title" id="bmTitle"></p>
+        <dl class="bm-list">
+          <div>
+            <dt>弱点 / WEAKNESS</dt>
+            <dd id="bmWeak"></dd>
+          </div>
+          <div>
+            <dt>特殊能力 / ABILITY</dt>
+            <dd id="bmAbility"></dd>
+          </div>
+          <div>
+            <dt>背景ストーリー / LORE</dt>
+            <dd id="bmStory"></dd>
+          </div>
+          <div>
+            <dt>撃破時の報酬 / REWARD</dt>
+            <dd id="bmReward"></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="ギャラリー画像" aria-hidden="true">
+    <div class="modal-box gallery-modal">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
+      <div class="gm-stage">
+        <button class="gm-arrow gm-prev" id="gmPrev" type="button" aria-label="前の画像">‹</button>
+        <img id="gmImg" src="" alt="">
+        <button class="gm-arrow gm-next" id="gmNext" type="button" aria-label="次の画像">›</button>
+      </div>
+      <div class="gm-cap"><span class="t" id="gmTitle"></span><span class="c" id="gmCount"></span></div>
+    </div>
+  </div>
+
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important
+      }
+
+      .title-ja,
+      .title-en,
+      .copy-sub,
+      .hero-cta {
+        opacity: 1 !important
+      }
+    </style>
+  </noscript>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
